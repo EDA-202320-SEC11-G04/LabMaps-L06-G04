@@ -33,6 +33,7 @@ This repository is part of the data structure and algorithms (#EDA) teaching fra
 The students edit this section to add their names, Uniandes emails, and specify which project functionality of the project they will implement.
 
 1. Camilo Andres Tellez Sanguino/ 202312456
+2. 
 
 [Back to top](#sample-map)
 
