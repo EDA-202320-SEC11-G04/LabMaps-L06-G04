@@ -115,15 +115,12 @@ def printBooksbyTitle(books):
     Completar la descripcion de printBooksbyTitle
     """
     if(books):
-        print('Se encontraron: ' + str(lt.size(books)) + ' Libros')
-        for book in lt.iterator(books):
-            print(book['title'])
-        print("\n")
+        print(books)
     else:
-        print("No se encontraron libros.\n")
+        print("No se encontro el libro.\n")
 
 
-    pass
+    
 
 # Menu de opciones
 

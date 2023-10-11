@@ -80,7 +80,7 @@ def newCatalog():
     """
     Este indice crea un map cuya llave es el identificador del libro
     """
-    catalog['bookIds'] = mp.newMap(10000,
+    catalog['bookIds'] = mp.newMap(12000,
                                    maptype='CHAINING',
                                    loadfactor=4,
                                    cmpfunction=compareMapBookIds)
@@ -121,7 +121,7 @@ def newCatalog():
     La columna 'titles' del archivo books.csv
     """
     # TODO lab 6, agregar el ADT map con newMap()
-    catalog['titles'] = mp.newMap(1000,
+    catalog['titles'] = mp.newMap(12000,
                                  maptype='CHAINING',
                                  loadfactor=4,
                                  cmpfunction=compareTitles)
@@ -176,6 +176,7 @@ def addBook(catalog, book):
     """
     lt.addLast(catalog['books'], book)
     mp.put(catalog['bookIds'], book['goodreads_book_id'], book)
+    mp.put(catalog['titles'], book['title'], book)
     authors = book['authors'].split(",")  # Se obtienen los autores
     for author in authors:
         addBookAuthor(catalog, author.strip(), book)
@@ -321,9 +322,9 @@ def getBookByTitle(catalog, title):
     """
     Completar la descripcion de getBookByTitle
     """
-    title= mp.get(catalog,title)
+    title= mp.get(catalog["titles"],title)
     if title:
-        return me.getValue(title)['books']
+        return me.getValue(title)
 
     
 def booksSize(catalog):
